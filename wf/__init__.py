@@ -62,7 +62,7 @@ def preqc_task(read1: LatchFile, read2: LatchFile) -> (LatchFile, LatchFile):
 def assemble_task(qc_read1: LatchFile, qc_read2: LatchFile) -> LatchFile:
 # ()
 
-    transcripts = Path("/output/Trinity.fasta").resolve()
+    transcripts = Path("Trinity.fasta").resolve()
 
     _trinity_cmd = [
         "Trinity",
@@ -75,7 +75,7 @@ def assemble_task(qc_read1: LatchFile, qc_read2: LatchFile) -> LatchFile:
         "--max_memory",
         "1000G"
         "--output",
-        "output",
+        str(transcripts),
     ]
 
     subprocess.run(_trinity_cmd)
