@@ -73,9 +73,7 @@ def assemble_task(qc_read1: LatchFile, qc_read2: LatchFile) -> LatchFile:
         "--right",
         "latch:///qc_read2.fq.gz",
         "--max_memory",
-        "1000G"
-        "--output",
-        str(transcripts),
+        "1000G",
     ]
 
     subprocess.run(_trinity_cmd)
